@@ -32,9 +32,13 @@ export function AnchorButton({ className, content, href }) {
 }
 
 export function Button({ className, content, onClick }) {
+  const pressButton=()=>{
+    console.log("this is Stephen")
+  }
+
   return (
     <button
-      onClick={onClick}
+      onClick={pressButton}
       className={`
         inline-block transition-all duration-700 ease-in-out px-4 py-2 text-sm
         md:text-base md:px-8 md:py-2 text-white font-heading 

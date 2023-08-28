@@ -15,10 +15,31 @@ DAO Forum: And best of all, continuously giving back to the community with our D
 
 # Built With
 
-## SmartContracts
+#### SmartContracts
 
 SmartContracts are deployed on Arbitrum and Avalanche testnet
 
+DAO contract:
+ReviewerContract:
+CustomerContract:
 
-## ENS
+Steps from backend:
+Get the dao contract setup
+deploy contracts on both chains: Arbitrum and Avalanche
+change the payment to each chain token
+verify the contracts
+
+Steps from the frontend:
+Connect frontend to either Avax contract or Arbitrum
+connect using ENS/SpruceID
+Connect basic functions
+You can't buy EAG token. It is the governance token. It is measured by your activeness on the platform; either as a customer
+or reviewer. Both are the decision makers on the forum.
+
+
+#### ENS
+The platform supports ENS as usernames
+
+#### SpruceID
+
 
