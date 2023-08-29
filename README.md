@@ -17,12 +17,24 @@ DAO Forum: And best of all, continuously giving back to the community with our D
 
 #### SmartContracts
 
-SmartContracts  deployed and verified  on ArbitrumGoerli
+# SmartContracts  deployed and verified  on ArbitrumGoerli
 
-EagleToken_Arbitrum = "0x83e51530A346c1E515106cdA0B425fF1466f4dd3";
- ReviewerContract_Arbitrum = "0x1D0ED3B7FA038e1420dFe3A22C258659DC7BDaf0";
- customerContract_Arbitrum = "0x8bF06F7f1E6c022Ce0C3de8f04ce4C463b91AdBD";
- vaultContract_Arbitrum = "0xcbeed5F0D6d5526fa78731E53A955E025A771Ce1";
+1. EagleToken_Arbitrum = "0x83e51530A346c1E515106cdA0B425fF1466f4dd3";
+2.  ReviewerContract_Arbitrum = "0x1D0ED3B7FA038e1420dFe3A22C258659DC7BDaf0";
+3.  customerContract_Arbitrum = "0x8bF06F7f1E6c022Ce0C3de8f04ce4C463b91AdBD";
+4. vaultContract_Arbitrum = "0xcbeed5F0D6d5526fa78731E53A955E025A771Ce1";
+
+# Smartcontracts deployed and verified on Avax (fuji testnet)
+
+1. EagleToken_Arbitrum = "0x8Ca6e15bd9c490C6bF78E5010f04D3E84ACe8425";
+2.  ReviewerContract_Arbitrum = "0x253BC6b47dBD38bB4ca0DC898e58cA2EEFD812A7";
+3.  customerContract_Arbitrum = "0x61DE09B291D1A6d2a2eBbFb0DF0f94bb707cB43F";
+4. vaultContract_Arbitrum = "0xe707D948A3b055f57b14632Da8e2b3d390969572";
+
+
+
+
+
 
 
 #### Note
