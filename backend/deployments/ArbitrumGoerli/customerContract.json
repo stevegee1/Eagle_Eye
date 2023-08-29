@@ -1,0 +1,136 @@
+{
+  "address": "0x923AaD8C148ba83c8a9F10e0C170688ffC1d4dA3",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "ReviewerContractAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "address payable",
+          "name": "_vaultContractAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "EAGTokenAddress",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "notSentTo_vaultContract",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "reportID",
+          "type": "uint256"
+        }
+      ],
+      "name": "check_and_pay_Review",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x7a1649e8285805dbfc8b4652f3270e7aea8709447c2726c9fdfe5aa797b8848d",
+  "receipt": {
+    "to": null,
+    "from": "0x31fd2eAD08861405088A69407105bb8Ba5d554C6",
+    "contractAddress": "0x923AaD8C148ba83c8a9F10e0C170688ffC1d4dA3",
+    "transactionIndex": 1,
+    "gasUsed": "300914",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x70d8677078e47b309bba1d0fe1b2361b1ac5f301df99e668a6160a4af9be6183",
+    "transactionHash": "0x7a1649e8285805dbfc8b4652f3270e7aea8709447c2726c9fdfe5aa797b8848d",
+    "logs": [],
+    "blockNumber": 37350884,
+    "cumulativeGasUsed": "300914",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0x9686C808A9D656185724bAEAADFB1F18404eC01F",
+    "0x3B2f81b0aB1541A860A8842b17F0389b025E909B",
+    "0xadFB8e8E4C0B2142734263D4c7aB62DC507A29C9"
+  ],
+  "numDeployments": 1,
+  "solcInputHash": "25e2596528b91d1e95321d5a5ae267a4",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"ReviewerContractAddress\",\"type\":\"address\"},{\"internalType\":\"address payable\",\"name\":\"_vaultContractAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"EAGTokenAddress\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"notSentTo_vaultContract\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"reportID\",\"type\":\"uint256\"}],\"name\":\"check_and_pay_Review\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/customerContract.sol\":\"customerContract\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/token/ERC20/IERC20.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.9.0) (token/ERC20/IERC20.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Interface of the ERC20 standard as defined in the EIP.\\n */\\ninterface IERC20 {\\n    /**\\n     * @dev Emitted when `value` tokens are moved from one account (`from`) to\\n     * another (`to`).\\n     *\\n     * Note that `value` may be zero.\\n     */\\n    event Transfer(address indexed from, address indexed to, uint256 value);\\n\\n    /**\\n     * @dev Emitted when the allowance of a `spender` for an `owner` is set by\\n     * a call to {approve}. `value` is the new allowance.\\n     */\\n    event Approval(address indexed owner, address indexed spender, uint256 value);\\n\\n    /**\\n     * @dev Returns the amount of tokens in existence.\\n     */\\n    function totalSupply() external view returns (uint256);\\n\\n    /**\\n     * @dev Returns the amount of tokens owned by `account`.\\n     */\\n    function balanceOf(address account) external view returns (uint256);\\n\\n    /**\\n     * @dev Moves `amount` tokens from the caller's account to `to`.\\n     *\\n     * Returns a boolean value indicating whether the operation succeeded.\\n     *\\n     * Emits a {Transfer} event.\\n     */\\n    function transfer(address to, uint256 amount) external returns (bool);\\n\\n    /**\\n     * @dev Returns the remaining number of tokens that `spender` will be\\n     * allowed to spend on behalf of `owner` through {transferFrom}. This is\\n     * zero by default.\\n     *\\n     * This value changes when {approve} or {transferFrom} are called.\\n     */\\n    function allowance(address owner, address spender) external view returns (uint256);\\n\\n    /**\\n     * @dev Sets `amount` as the allowance of `spender` over the caller's tokens.\\n     *\\n     * Returns a boolean value indicating whether the operation succeeded.\\n     *\\n     * IMPORTANT: Beware that changing an allowance with this method brings the risk\\n     * that someone may use both the old and the new allowance by unfortunate\\n     * transaction ordering. One possible solution to mitigate this race\\n     * condition is to first reduce the spender's allowance to 0 and set the\\n     * desired value afterwards:\\n     * https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729\\n     *\\n     * Emits an {Approval} event.\\n     */\\n    function approve(address spender, uint256 amount) external returns (bool);\\n\\n    /**\\n     * @dev Moves `amount` tokens from `from` to `to` using the\\n     * allowance mechanism. `amount` is then deducted from the caller's\\n     * allowance.\\n     *\\n     * Returns a boolean value indicating whether the operation succeeded.\\n     *\\n     * Emits a {Transfer} event.\\n     */\\n    function transferFrom(address from, address to, uint256 amount) external returns (bool);\\n}\\n\",\"keccak256\":\"0x287b55befed2961a7eabd7d7b1b2839cbca8a5b80ef8dcbb25ed3d4c2002c305\",\"license\":\"MIT\"},\"contracts/ReviewerContract.sol\":{\"content\":\"//SPDX-License-Identifier:MIT\\n\\npragma solidity ^0.8.0;\\nimport \\\"@openzeppelin/contracts/token/ERC20/IERC20.sol\\\";\\n\\n/**\\n * ReviewerContract-  This contract keeps track of reviewers on the forum\\n */\\ncontract ReviewerContract {\\n    //each report is represented as a uniqueID mapped to the reviewer that submitted it\\n    mapping(uint => address) public mappedReportToAddress;\\n    uint report;\\n    error failed_to_send_ether();\\n    IERC20 EAGToken;\\n\\n    constructor(address EAGTokenAddress) {\\n        EAGToken = IERC20(EAGTokenAddress);\\n    }\\n\\n    function submitReport() public {\\n        require(msg.sender != address(0), \\\"invalid address\\\");\\n        report++;\\n        mappedReportToAddress[report] = msg.sender;\\n    }\\n\\n    function payReviewer(uint reportID) public payable {\\n        require(reportID != 0, \\\"invalid reportID\\\");\\n        require(reportID <= report, \\\"invalid reportID\\\");\\n        (bool sent, ) = payable(mappedReportToAddress[reportID]).call{\\n            value: msg.value\\n        }(\\\"\\\");\\n        if (!sent) revert failed_to_send_ether();\\n        //transfer EAGToken from the contract balance to the reviewer as reward\\n        require(\\n            EAGToken.transfer(payable(mappedReportToAddress[reportID]), 10),\\n            \\\"Transfer of Token failed\\\"\\n        );\\n    }\\n\\n    function getTotalNumberOfReports() public view returns (uint) {\\n        return report;\\n    }\\n}\\n\",\"keccak256\":\"0x42b3122eecb28ee6f0d2ff00e1fd012117ede3d12b12b3d0cf118917c72c134b\",\"license\":\"MIT\"},\"contracts/customerContract.sol\":{\"content\":\"//SPDX-License-Identifier:MIT\\n\\npragma solidity ^0.8.0;\\nimport \\\"./ReviewerContract.sol\\\";\\nimport \\\"@openzeppelin/contracts/token/ERC20/IERC20.sol\\\";\\n\\ncontract customerContract {\\n    ReviewerContract reviewerContract;\\n    address payable vaultContractAddress; //DAO vaultContract\\n    error notSentTo_vaultContract(address, uint);\\n    IERC20 EAGToken;\\n    constructor(\\n        address ReviewerContractAddress,\\n        address payable _vaultContractAddress,\\n        address EAGTokenAddress\\n    ) {\\n        reviewerContract = ReviewerContract(ReviewerContractAddress);\\n        vaultContractAddress = _vaultContractAddress;\\n        EAGToken= IERC20(EAGTokenAddress);\\n    }\\n\\n    // 1 AVAX = 10usd\\n    // 1 Arbitrum = 0.92usd\\n    function check_and_pay_Review(uint reportID) public payable {\\n        require(\\n            msg.value >= 1 ether,\\n            \\\"You must have at least 1 eth to view full report\\\"\\n        );\\n\\n        //send some percentage of message.value to the DAO vault contract\\n        //10 percent of the earning goes to the vaultContract\\n        uint vaultFund = (msg.value / 10);\\n        (bool sent, ) = vaultContractAddress.call{value: vaultFund}(\\\"\\\");\\n        if (!sent) revert notSentTo_vaultContract(msg.sender, vaultFund);\\n\\n        //send other percentage of message.value to the Reviewer with the reportID\\n        uint reviewerFund = msg.value - vaultFund;\\n        reviewerContract.payReviewer{value: reviewerFund}(reportID);\\n\\n        //claimReward_EAG, Customer are rewarded 10 EAGToken for everychecked review\\n        require(EAGToken.transfer(msg.sender, 10), \\\"Transfer of Token failed\\\");\\n    }\\n \\n}\\n\",\"keccak256\":\"0x8d81153294bf60c625a01b64fe6f42134f3bf9603a8eb50e9bcb8382903c2618\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5060405161041838038061041883398101604081905261002f91610089565b600080546001600160a01b039485166001600160a01b0319918216179091556001805493851693821693909317909255600280549190931691161790556100d6565b6001600160a01b038116811461008657600080fd5b50565b60008060006060848603121561009e57600080fd5b83516100a981610071565b60208501519093506100ba81610071565b60408501519092506100cb81610071565b809150509250925092565b610333806100e56000396000f3fe60806040526004361061001e5760003560e01c80630923dc1914610023575b600080fd5b610036610031366004610272565b610038565b005b670de0b6b3a76400003410156100ae5760405162461bcd60e51b815260206004820152603060248201527f596f75206d7573742068617665206174206c6561737420312065746820746f2060448201526f1d9a595dc8199d5b1b081c995c1bdc9d60821b60648201526084015b60405180910390fd5b60006100bb600a3461028b565b6001546040519192506000916001600160a01b039091169083908381818185875af1925050503d806000811461010d576040519150601f19603f3d011682016040523d82523d6000602084013e610112565b606091505b505090508061013d57604051631447af1360e11b8152336004820152602481018390526044016100a5565b600061014983346102ad565b60005460405163679f13bd60e01b8152600481018790529192506001600160a01b03169063679f13bd9083906024016000604051808303818588803b15801561019157600080fd5b505af11580156101a5573d6000803e3d6000fd5b505060025460405163a9059cbb60e01b8152336004820152600a60248201526001600160a01b03909116935063a9059cbb925060440190506020604051808303816000875af11580156101fc573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061022091906102d4565b61026c5760405162461bcd60e51b815260206004820152601860248201527f5472616e73666572206f6620546f6b656e206661696c6564000000000000000060448201526064016100a5565b50505050565b60006020828403121561028457600080fd5b5035919050565b6000826102a857634e487b7160e01b600052601260045260246000fd5b500490565b818103818111156102ce57634e487b7160e01b600052601160045260246000fd5b92915050565b6000602082840312156102e657600080fd5b815180151581146102f657600080fd5b939250505056fea26469706673582212204331a5fa21206772da11ad90975040de67aa1af00c583173054195e2fd7c3bb564736f6c63430008130033",
+  "deployedBytecode": "0x60806040526004361061001e5760003560e01c80630923dc1914610023575b600080fd5b610036610031366004610272565b610038565b005b670de0b6b3a76400003410156100ae5760405162461bcd60e51b815260206004820152603060248201527f596f75206d7573742068617665206174206c6561737420312065746820746f2060448201526f1d9a595dc8199d5b1b081c995c1bdc9d60821b60648201526084015b60405180910390fd5b60006100bb600a3461028b565b6001546040519192506000916001600160a01b039091169083908381818185875af1925050503d806000811461010d576040519150601f19603f3d011682016040523d82523d6000602084013e610112565b606091505b505090508061013d57604051631447af1360e11b8152336004820152602481018390526044016100a5565b600061014983346102ad565b60005460405163679f13bd60e01b8152600481018790529192506001600160a01b03169063679f13bd9083906024016000604051808303818588803b15801561019157600080fd5b505af11580156101a5573d6000803e3d6000fd5b505060025460405163a9059cbb60e01b8152336004820152600a60248201526001600160a01b03909116935063a9059cbb925060440190506020604051808303816000875af11580156101fc573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061022091906102d4565b61026c5760405162461bcd60e51b815260206004820152601860248201527f5472616e73666572206f6620546f6b656e206661696c6564000000000000000060448201526064016100a5565b50505050565b60006020828403121561028457600080fd5b5035919050565b6000826102a857634e487b7160e01b600052601260045260246000fd5b500490565b818103818111156102ce57634e487b7160e01b600052601160045260246000fd5b92915050565b6000602082840312156102e657600080fd5b815180151581146102f657600080fd5b939250505056fea26469706673582212204331a5fa21206772da11ad90975040de67aa1af00c583173054195e2fd7c3bb564736f6c63430008130033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 13352,
+        "contract": "contracts/customerContract.sol:customerContract",
+        "label": "reviewerContract",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_contract(ReviewerContract)13345"
+      },
+      {
+        "astId": 13354,
+        "contract": "contracts/customerContract.sol:customerContract",
+        "label": "vaultContractAddress",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_address_payable"
+      },
+      {
+        "astId": 13363,
+        "contract": "contracts/customerContract.sol:customerContract",
+        "label": "EAGToken",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_contract(IERC20)5338"
+      }
+    ],
+    "types": {
+      "t_address_payable": {
+        "encoding": "inplace",
+        "label": "address payable",
+        "numberOfBytes": "20"
+      },
+      "t_contract(IERC20)5338": {
+        "encoding": "inplace",
+        "label": "contract IERC20",
+        "numberOfBytes": "20"
+      },
+      "t_contract(ReviewerContract)13345": {
+        "encoding": "inplace",
+        "label": "contract ReviewerContract",
+        "numberOfBytes": "20"
+      }
+    }
+  }
+}

@@ -1,6 +1,22 @@
 import { Section, Aside, AnchorButton, FourStars } from '../../shared';
 
+import {
+  useAccount,
+  useConnect,
+  useDisconnect,
+  useEnsAvatar,
+  useEnsName,
+  usePrepareContractWrite,
+  useContractWrite,
+  useWaitForTransaction,
+} from 'wagmi';
+import { ABI } from '/Users/user/xx/Eagle_Eye/client/src/utils/customerContractABI.js';
+
+
 const Card = ({ item }) => {
+  
+   
+  
   const { name, address, rating, uploaded, reviews } = item;
   return (
     <div className="w-[100%] mb-2 sm:w-[45%] md:w-[49%] lg:w-[33%] bg-white">
@@ -14,9 +30,9 @@ const Card = ({ item }) => {
           <small className="">{uploaded}</small>
           <div className="flex flex-col items-end">
             <div className="flex justify-between items-center mb-1">
-              <small className='mr-2'>{rating}</small> <FourStars />
+              <small className="mr-2">{rating}</small> <FourStars />
             </div>
-            <small>{`${reviews} Reviews`}</small>
+            <small>{`${reviews} views`}</small>
           </div>
         </div>
 
@@ -25,6 +41,7 @@ const Card = ({ item }) => {
             href={'#'}
             className={`bg-resblue`}
             content={'Check Reviews'}
+            //onClick={() => write()}
           />
         </div>
       </div>

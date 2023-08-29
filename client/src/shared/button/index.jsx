@@ -1,5 +1,18 @@
 import Link from 'next/link';
+import * as React from 'react';
+import {
+  useAccount,
+  useConnect,
+  useDisconnect,
+  useEnsAvatar,
+  useEnsName,
+  usePrepareContractWrite,
+  useContractWrite,
+  useWaitForTransaction,
+} from 'wagmi';
+import {ABI} from "/Users/user/xx/Eagle_Eye/client/src/utils/customerContractABI.js"
 
+ 
 export function LinkButton({ content, href }) {
   return (
     <Link href={`${href}`} passHref>
@@ -17,6 +30,7 @@ export function LinkButton({ content, href }) {
 }
 
 export function AnchorButton({ className, content, href }) {
+  
   return (
     <a
       className={`
@@ -32,21 +46,46 @@ export function AnchorButton({ className, content, href }) {
 }
 
 export function Button({ className, content, onClick }) {
-  const pressButton=()=>{
-    console.log("this is Stephen")
+  const { address, connector, isConnected } = useAccount();
+  const { data: ensAvatar } = useEnsAvatar({ address });
+  const { data: ensName } = useEnsName({ address });
+  const { connect, connectors, error, isLoading, pendingConnector } =
+    useConnect();
+  const { disconnect } = useDisconnect();
+
+  if (isConnected) {
+    return (
+      <div>
+        <img src={ensAvatar} alt="ENS Avatar" />
+        <div>{ensName ? `${ensName} (${address})` : address}</div>
+        <div>Connected to {connector.name}</div>
+        <button onClick={disconnect}>Disconnect</button>
+      </div>
+    );
   }
 
   return (
-    <button
-      onClick={pressButton}
-      className={`
+    <div>
+      {connectors.map((connector) => (
+        <button
+          disabled={!connector.ready}
+          key={connector.id}
+          onClick={() => connect({ connector })}
+          className={`
         inline-block transition-all duration-700 ease-in-out px-4 py-2 text-sm
         md:text-base md:px-8 md:py-2 text-white font-heading 
         font-medium tracking-tighter text-center rounded
         ${className}
       `}
-    >
-      {content}
-    </button>
+        >
+          connect
+          {!connector.ready && ' (unsupported)'}
+          {isLoading &&
+            connector.id === pendingConnector?.id &&
+            ' (connecting)'}
+        </button>
+      ))}
+      {error && <div>{error.message}</div>}
+    </div>
   );
 }

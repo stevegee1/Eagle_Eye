@@ -1,6 +1,7 @@
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { DeployFunction } from "hardhat-deploy/types";
 import { ethers } from "hardhat";
+import verify from "../script/verifyContract"
 
 const deployEAGToken: DeployFunction = async function (
   hre: HardhatRuntimeEnvironment
@@ -14,25 +15,26 @@ const deployEAGToken: DeployFunction = async function (
     log: true,
     args: [],
   });
+ await verify(EAGToken.address)
 
-  await Delegate(EAGToken.address, deployer)
-  log("Delegated")
+  //await Delegate(EAGToken.address, deployer)
+  //log("Delegated")
 };
 
 //Delegate token to vote
-const Delegate = async (
-  governanceTokenAddress: string,
-  delegatedAccount: string
-) => {
-  const governanceToken = await ethers.getContractAt(
-    "EagleToken",
-    governanceTokenAddress
-  );
-  const tx = await governanceToken.delegate(delegatedAccount);
-  await tx.wait(1);
-  console.log(
-    `checkpoints ${await governanceToken.numCheckpoints(delegatedAccount)}`
-  );
-};
+// const Delegate = async (
+//   governanceTokenAddress: string,
+//   delegatedAccount: string
+// ) => {
+//   const governanceToken = await ethers.getContractAt(
+//     "EagleToken",
+//     governanceTokenAddress
+//   );
+//   const tx = await governanceToken.delegate(delegatedAccount);
+//   await tx.wait(1);
+//   console.log(
+//     `checkpoints ${await governanceToken.numCheckpoints(delegatedAccount)}`
+//   );
+// };
 export default deployEAGToken;
 deployEAGToken.tags=["all", "EAG"]

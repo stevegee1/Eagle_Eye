@@ -1,6 +1,6 @@
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { DeployFunction } from "hardhat-deploy/types";
-
+import verify from "../script/verifyContract";
 const deploy_customerContract: DeployFunction = async function (
   hre: HardhatRuntimeEnvironment
 ) {
@@ -18,5 +18,7 @@ const deploy_customerContract: DeployFunction = async function (
     log: true,
     args: [ReviewerContract.address, vaultContract.address, eagleToken.address],
   });
+     // await verify(_customerContract.address);
+
 };
 export default deploy_customerContract;

@@ -1,7 +1,7 @@
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { DeployFunction } from "hardhat-deploy/types";
 import { ethers } from "hardhat";
-
+import verify from "../script/verifyContract";
 const deploy_vaultContract: DeployFunction = async function (
   hre: HardhatRuntimeEnvironment
 ) {
@@ -16,13 +16,15 @@ const deploy_vaultContract: DeployFunction = async function (
     args: [],
   });
 
-  const timelock = await ethers.getContract("TimelockControl");
-  const vaultC = await ethers.getContractAt("vaultContract", _vaultContract.address);
+ // const timelock = await ethers.getContract("TimelockControl");
+ // const vaultC = await ethers.getContractAt("vaultContract", _vaultContract.address);
 
   //TransferOwnership to timelock address
-  const vaultCOwnership = await vaultC.transferOwnership(timelock.target)
-  await vaultCOwnership.wait(1)
-  log ("Transferred....")
+  //const vaultCOwnership = await vaultC.transferOwnership(timelock.target)
+ // await vaultCOwnership.wait(1)
+   //  await verify(_vaultContract.address);
+
+
 };
  
 
