@@ -5,7 +5,7 @@ Web3 space has always been a space that thrives on communities. With the rise in
 
 EAGLE EYE is a low-cost, easy-to-use platform for decentralized Web3/Crypto policing and DAO community with three variation of users:
 
-Customers : This category of users pay for service render by the platform with the $Eagle Token. A user in this category can view the full details of review on a particular /any project of interest existing on any supported blockchain network by querying the database with just the name of the project or more technical, with any address associated to the scam project/community/entity.
+Customers : This category of users pay for service render by the platform in $AGOR. A user in this category can view the full details of review on a particular /any project of interest existing on any supported blockchain network by querying the database with just the name of the project or more technical, with any address associated to the scam project/community/entity.
 
 Reviewers: This category of users submit reviews for the platform and earn passively.
 
@@ -17,22 +17,15 @@ DAO Forum: And best of all, continuously giving back to the community with our D
 
 #### SmartContracts
 
-SmartContracts are deployed on Arbitrum and Avalanche testnet
+SmartContracts  deployed and verified  on ArbitrumGoerli
 
-DAO contract:
-ReviewerContract:
-CustomerContract:
+EagleToken_Arbitrum = "0x83e51530A346c1E515106cdA0B425fF1466f4dd3";
+ ReviewerContract_Arbitrum = "0x1D0ED3B7FA038e1420dFe3A22C258659DC7BDaf0";
+ customerContract_Arbitrum = "0x8bF06F7f1E6c022Ce0C3de8f04ce4C463b91AdBD";
+ vaultContract_Arbitrum = "0xcbeed5F0D6d5526fa78731E53A955E025A771Ce1";
 
-Steps from backend:
-Get the dao contract setup
-deploy contracts on both chains: Arbitrum and Avalanche
-change the payment to each chain token
-verify the contracts
 
-Steps from the frontend:
-Connect frontend to either Avax contract or Arbitrum
-connect using ENS/SpruceID
-Connect basic functions
+#### Note
 You can't buy EAG token. It is the governance token. It is measured by your activeness on the platform; either as a customer
 or reviewer. Both are the decision makers on the forum.
 
@@ -40,6 +33,10 @@ or reviewer. Both are the decision makers on the forum.
 #### ENS
 The platform supports ENS as usernames
 
-#### SpruceID
+
+# FIGMA DESIGN
+https://xd.adobe.com/view/52a7e95e-79c7-4b7e-b415-7ed817c627a2-07f4/screen/9910a440-422f-40aa-b8c5-0e5b7bb7e2b5?fullscreen&hints=off
+
+# VIDEO PITCH
 
 
